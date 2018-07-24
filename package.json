@@ -1,0 +1,19 @@
+{
+  "name": "CatGifs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saix93/CatGifs.git"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "giphy-js-sdk-core": "^1.0.5",
+    "image-downloader": "^3.4.1",
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
