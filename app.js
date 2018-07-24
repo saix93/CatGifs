@@ -83,6 +83,12 @@ function shouldSendGif() {
   return should;
 }
 
+function sendGif(chatID) {
+  bot.sendDocument(chatID, `${contentRute}/200w.gif`).then(() => {
+    bot.sendMessage(chatID, "Gatete!");
+  });
+}
+
 // Function called on one of the urls
 function SendCatGif(request, response, chatID) {
   if (response && !shouldSendGif()) {
@@ -119,16 +125,12 @@ function SendCatGif(request, response, chatID) {
             
             if (config.telegram.chatIDs[id] === false) continue;
   
-            bot.sendDocument(id, `${contentRute}/200w.gif`).then(() => {
-              bot.sendMessage(id, "Gatete!");
-            });
-
-            response.send('OK. Gif sent!');
+            sendGif(id);
           }
+
+          response.send('OK. Gif sent!');
         } else {
-          bot.sendDocument(chatID, `${contentRute}/200w.gif`).then(() => {
-            bot.sendMessage(chatID, "Gatete!");
-          });
+          sendGif(chatId);
         }
 
       }).catch((err) => {
