@@ -26,7 +26,7 @@ const bot = new TelegramBot(token, {polling: true});
 
 // Sets up the server and the urls
 app.get('/SendCatGif', SendCatGif);
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(3000, () => console.log('CatGifs app listening on port 3000!'));
 
 var chatIDs = config.telegram.chatIDs;
 
@@ -130,7 +130,7 @@ function SendCatGif(request, response, chatID) {
 
           response.send('OK. Gif sent!');
         } else {
-          sendGif(chatId);
+          sendGif(chatID);
         }
 
       }).catch((err) => {
